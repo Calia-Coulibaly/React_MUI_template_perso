@@ -2,17 +2,18 @@ import "./styles.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import ResponsiveAppBar from "./views/ResponsiveAppBar";
-import AccueilView from "./views/AccueilView";
+import AccueilNCView from "./views/AccueilNCView";
+import InscView from "./views/InscView";
+import Footer from "./views/Footer";
+//-------------------------------------------------------------------
 import ProduitView from "./views/ProduitVIew";
-import PrixView from "./views/PrixView";
 import DispoView from "./views/DispoView";
 import ProfileView from "./views/ProfileView";
 import AccountView from "./views/AccountView";
 import DashboardView from "./views/DashboardView";
 import LogoutView from "./views/LogoutView";
 import LoginView from "./views/LoginView";
-import IdentView from "./views/IdentView";
-import Footer from "./views/Footer";
+// import IdentView from "./views/IdentView";
 
 import Container from "@mui/material/Container";
 
@@ -23,13 +24,13 @@ export default function App() {
         <ResponsiveAppBar></ResponsiveAppBar>
         <Container sx={{ py: 10, minHeight: 500 }} maxWidth="xl">
           <Routes>
-            <Route path="/" element={<AccueilView />} />
+            <Route path="/" element={<AccueilNCView />} />
             <Route path="/produit" element={<ProduitView />} />
-            <Route path="/prix" element={<PrixView />} />
+            <Route path="/inscription" element={<InscView />} />
             <Route path="/dispo" element={<DispoView />} />
 
             <Route path="/login" element={<LoginView />} />
-            <Route path="/ident" element={<IdentView />} />
+            {/* <Route path="/ident" element={<IdentView />} /> */}
             <Route path="/profil" element={<ProfileView />} />
             <Route path="/account" element={<AccountView />} />
             <Route path="/dashboard" element={<DashboardView />} />

@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import logo from "../img/Logo_Le_panier_dantan.png";
 
 import { Link } from "react-router-dom";
 
@@ -41,7 +42,6 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           {/* ==========  icone android à gauche 
                   s'affiche uniquement si taille écran = md */}
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           {/* ==========  libellé à gauche qui
                   s'affiche uniquement si taille écran = md */}
           <Link to={"/"}>
@@ -54,11 +54,12 @@ function ResponsiveAppBar() {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none"
+                color: "#000000",
+                textDecoration: "none",
               }}
             >
-              Mon Appli
+              <img src={logo} className="logo" />
+              Panier d'Antan
             </Typography>
           </Link>
           {/* menu burger qui s'affiche uniquement si taille écran = md */}
@@ -80,27 +81,29 @@ function ResponsiveAppBar() {
               anchorEl={anchorElNav} // position du menu
               anchorOrigin={{
                 vertical: "bottom",
-                horizontal: "left"
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "left"
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)} // affiché / caché en fonction du state
               onClose={handleCloseNavMenu} // fonction exécutée quand on ferme le menu
               sx={{
-                display: { xs: "block", md: "none" }
+                display: { xs: "block", md: "none" },
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link to={"/produit"}>
-                  <Typography textAlign="center">Produits</Typography>
+                <Link to={"/devcommercant"}>
+                  <Typography textAlign="center">
+                    Devenir commerçant{" "}
+                  </Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Link to={"/prix"}>
-                  <Typography textAlign="center">Prix</Typography>
+                <Link to={"/connect"}>
+                  <Typography textAlign="center">Connexion</Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
@@ -112,7 +115,7 @@ function ResponsiveAppBar() {
           </Box>
           {/* ==========  icone android à gauche 
                   s'affiche uniquement si taille écran < md */}
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+
           <Typography
             variant="h5"
             noWrap
@@ -126,10 +129,11 @@ function ResponsiveAppBar() {
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
-              textDecoration: "none"
+              textDecoration: "none",
             }}
           >
-            Mon appli
+            <img src={logo} className="logo" />
+            Panier d'Antan
           </Typography>
           {/* ==========  menu de gauche mais affiché dans la navbar
              si la taille de l'écran est assez grande = md */}
@@ -137,23 +141,23 @@ function ResponsiveAppBar() {
             <Link to={"/produit"}>
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "black", display: "block" }}
               >
-                Produits
+                Devenir commerçant
               </Button>
             </Link>
-            <Link to={"/prix"}>
+            <Link to={"/inscription"}>
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "black", display: "block" }}
               >
-                Prix
+                Connexion
               </Button>
             </Link>
             <Link to={"/dispo"}>
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "black", display: "block" }}
               >
                 Dispo
               </Button>
@@ -177,12 +181,12 @@ function ResponsiveAppBar() {
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: "top",
-                horizontal: "right"
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "right"
+                horizontal: "right",
               }}
               open={Boolean(anchorElUser)} // position du menu
               onClose={handleCloseUserMenu} // action si fermeture du menu
